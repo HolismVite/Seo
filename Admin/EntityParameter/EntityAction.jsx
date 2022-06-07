@@ -1,12 +1,12 @@
 import FindInPageIcon from '@mui/icons-material/FindInPage';
-import { ItemAction } from '@List'
+import { EntityAction } from '@List'
 
 const EntitySeo = ({
     entityType,
     entityGuid,
     ...rest
 }) => {
-    return <ItemAction
+    return <EntityAction
         {...rest}
         title='Manage SEO'
         icon={FindInPageIcon}
