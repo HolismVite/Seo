@@ -13,7 +13,7 @@ const UpsertEntityParameter = () => {
             setProgress(true)
             get(`/entityParameter/getRecord?entityType=${entityType}&entityGuid=${entityGuid}`)
                 .then(data => {
-                    app.emit(app.editRequested, { entity: data })
+                    // app.emit(app.editRequested, { entity: data })
                     setEntity(data)
                 }, error => {
                     setProgress(false)
