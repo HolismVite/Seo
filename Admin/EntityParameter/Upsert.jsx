@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Form, Progress, app, get, useMessage } from '@Form'
+import { PageForm, Progress, app, get, useMessage } from '@Form'
 import Inputs from '../ParameterObject/Inputs'
 
 const UpsertEntityParameter = () => {
@@ -29,7 +29,7 @@ const UpsertEntityParameter = () => {
         }
     }, [entity])
 
-    return progress ? <Progress /> : <Form
+    return progress ? <Progress /> : <PageForm
         entityType='EntityParameter'
         entity={entity}
         inputs={Inputs}
