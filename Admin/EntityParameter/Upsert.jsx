@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Form, Progress, app, get } from '@Form'
+import { Form, Progress, app, get, useMessage } from '@Form'
 import Inputs from '../ParameterObject/Inputs'
 
 const UpsertEntityParameter = () => {
@@ -7,6 +7,7 @@ const UpsertEntityParameter = () => {
     const { entityType, entityGuid } = app.parseQuery()
     const [entity, setEntity] = useState(null)
     const [progress, setProgress] = useState(true)
+    const { success, error } = useMessage()
 
     useEffect(() => {
         if (entityType && entityGuid) {
@@ -15,9 +16,9 @@ const UpsertEntityParameter = () => {
                 .then(data => {
                     // app.emit(app.editRequested, { entity: data })
                     setEntity(data)
-                }, error => {
+                }, e => {
                     setProgress(false)
-                    app.error(error)
+                    error(e)
                 })
         }
     }, [])
