@@ -5,34 +5,29 @@ import Inputs from '../ParameterObject/Inputs'
 const UpsertEntityParameter = () => {
 
     const { entityType, entityGuid } = app.parseQuery()
-    const [entity, setEntity] = useState(null)
-    const [progress, setProgress] = useState(true)
-    const { success, error } = useMessage()
+    const { error } = useMessage()
 
-    useEffect(() => {
+    const loader = ({
+        setEntity,
+        setProgress,
+    }) => {
         if (entityType && entityGuid) {
             setProgress(true)
             get(`/entityParameter/getRecord?entityType=${entityType}&entityGuid=${entityGuid}`)
                 .then(data => {
-                    // app.emit(app.editRequested, { entity: data })
+                    setProgress(false)
                     setEntity(data)
                 }, e => {
                     setProgress(false)
                     error(e)
                 })
         }
-    }, [])
+    }
 
-    useEffect(() => {
-        if (entity) {
-            setProgress(false)
-        }
-    }, [entity])
-
-    return progress ? <Progress /> : <PageForm
+    return <PageForm
         entityType='EntityParameter'
-        entity={entity}
         inputs={Inputs}
+        loader={loader}
     />
 }
 
