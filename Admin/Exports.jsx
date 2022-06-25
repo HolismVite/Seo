@@ -6,20 +6,20 @@ import Snippets from './Snippet/List'
 
 const SeoRoutes = [
     {
-        "path": "/entityParameters",
-        "component": EntityParameters
+        path: "/entityParameters",
+        component: EntityParameters
     },
     {
-        "path": "/entityParameter",
-        "component": UpsertEntityParameter
+        path: "/entityParameter",
+        component: UpsertEntityParameter
     },
     {
-        "path": "/queryParameters",
-        "component": QueryParameters
+        path: "/queryParameters",
+        component: QueryParameters
     },
     {
-        "path": "/snippets",
-        "component": Snippets
+        path: "/snippets",
+        component: Snippets
     }
 ]
 
