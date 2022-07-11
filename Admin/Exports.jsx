@@ -23,5 +23,5 @@ const SeoRoutes = [
     }
 ]
 
-export { SeoRoutes }
 export { EntitySeo }
+export { SeoRoutes }
