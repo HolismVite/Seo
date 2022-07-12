@@ -10,7 +10,7 @@ const EntitySeo = ({
         {...rest}
         title='Manage SEO'
         icon={FindInPageIcon}
-        goTo={`/entityParameter?entityType=${entityType}&entityGuid=${entityGuid}`}
+        goTo={`/entityParameter?entityType=${app.camelize(entityType)}&entityGuid=${entityGuid}`}
         superAdmin
     />
 }

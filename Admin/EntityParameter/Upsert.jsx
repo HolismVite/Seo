@@ -13,7 +13,7 @@ const UpsertEntityParameter = () => {
     }) => {
         if (entityType && entityGuid) {
             setProgress(true)
-            get(`/entityParameter/getRecord?entityType=${entityType}&entityGuid=${entityGuid}`)
+            get(`/entityParameter/getRecord?entityType=${app.camelize(entityType)}&entityGuid=${entityGuid}`)
                 .then(data => {
                     setProgress(false)
                     setEntity(data)
