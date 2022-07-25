@@ -1,3 +1,4 @@
+import SearchIcon from '@mui/icons-material/Search';
 import EntityParameters from './EntityParameter/List'
 import EntitySeo from './EntityParameter/EntityAction'
 import QueryParameters from './QueryParameter/List'
@@ -23,5 +24,19 @@ const SeoRoutes = [
     }
 ]
 
+const SeoMenu = [
+    {
+        title: "SEO",
+        icon: SearchIcon,
+        children: [
+            {
+                title: "Paths",
+                url: "/seoPaths"
+            }
+        ]
+    }
+]
+
 export { EntitySeo }
+export { SeoMenu }
 export { SeoRoutes }
